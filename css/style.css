@@ -49,11 +49,31 @@ ul {
     display: table;
 }
 
-ul li {
-    display: inline-table;
-    width: 20%;
+nav > ul {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+}
+
+nav > ul > li {
+    width: 25%;
+    display: table-cell;
     text-align: center;
-    height: 3em;
+    padding: 1em 0;
+}
+
+@media only screen and (max-width: 512px) {
+    nav > ul > li {
+        width: 100%;
+    }
+}
+
+nav ul ul {
+    display: none;
+}
+
+nav li:target ul {
+    display: inline;
 }
 
 li a {
@@ -63,17 +83,8 @@ li a {
      text-decoration: none;
 }
 
-/* Make the menu responsive depending of the screen width */
-@media only screen and (max-width: 500px) {
-    ul li {
-        width: 33%;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    ul li {
-        width: 10%;
-    }
+nav > ul > li > a {
+    font-weight: bold;
 }
 
 
